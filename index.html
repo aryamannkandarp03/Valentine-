@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Valentine 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #ffb6c1;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      width: 90%;
+      max-width: 350px;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: #ccc;
+      position: absolute;
+    }
+
+    img {
+      width: 200px;
+      margin-top: 15px;
+      border-radius: 15px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1 -->
+  <div class="card" id="slide1">
+    <h1>Will you be my Valentine? 💘</h1>
+    <button class="yes" onclick="showSlide2()">Yes 💖</button>
+    <button class="no" id="noBtn">No 😝</button>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div class="card hidden" id="slide2">
+    <h1>Thank you for accepting my proposal, Bubu 💕</h1>
+    <img src="https://media.tenor.com/6Z6YVtYyYkQAAAAC/bubu-dudu.gif" alt="Bubu Dudu">
+    <br>
+    <button class="yes" onclick="showSlide3()">Next ➜</button>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div class="card hidden" id="slide3">
+    <h1>💖</h1>
+    <p style="font-size:18px; color:#ff4d6d;">
+      Thank you for being the only thing which brings me peace.
+    </p>
+  </div>
+
+<script>
+  const noBtn = document.getElementById("noBtn");
+
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  });
+
+  function showSlide2() {
+    document.getElementById("slide1").classList.add("hidden");
+    document.getElementById("slide2").classList.remove("hidden");
+  }
+
+  function showSlide3() {
+    document.getElementById("slide2").classList.add("hidden");
+    document.getElementById("slide3").classList.remove("hidden");
+  }
+</script>
+
+</body>
+</html>
